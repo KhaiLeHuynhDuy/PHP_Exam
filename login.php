@@ -4,16 +4,16 @@ require_once("entity/user.class.php");
 require_once("config/db.class.php");
 
 
-// // Kiểm tra nếu người dùng đã đăng nhập, chuyển hướng tới trang success hoặc admin_page
-// if(isset($_SESSION['username'])) {
-//     if($_SESSION['role'] == 'admin') {
-//         header("Location: admin_page.php");
-//         exit();
-//     } else {
-//         header("Location: index.php");
-//         exit();
-//     }
-// }
+// Kiểm tra nếu người dùng đã đăng nhập, chuyển hướng tới trang success hoặc admin_page
+if(isset($_SESSION['username'])) {
+    if($_SESSION['role'] == 'admin') {
+        header("Location: admin_page.php");
+        exit();
+    } else {
+        header("Location: index.php");
+        exit();
+    }
+}
 
 // Kiểm tra nếu có dữ liệu được gửi từ form đăng nhập
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

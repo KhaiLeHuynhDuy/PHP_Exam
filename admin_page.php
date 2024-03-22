@@ -3,11 +3,11 @@ session_start();
 require_once("entity/employee.class.php");
 require_once("config/db.class.php");
 
-// // Kiểm tra quyền truy cập của người dùng
-// if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
-//     header("Location: 404.php");
-//     exit();
-// }
+// Kiểm tra quyền truy cập của người dùng
+if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
+    header("Location: 404.php");
+    exit();
+}
 
 // Xử lý đăng xuất
 if(isset($_POST['logout'])) {
